@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Reproductor de Vídeo Chido</title>
+	<link rel="stylesheet" href="css/player.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="js/materialize.min.js"></script>
+    <style type="text/css">
+		body {
+			background-color: #e53935;
+		}
+	</style>
+</head>
+<body>
+	<div class="player container center">
+	<h3 style="text-align: center; color: white;">Reproductor Básico de Vídeo</h3>
+	<video id="video" autoplay>
+	<source src="video/esperame.mp4" type="video/mp4">
+	</video>
+</div>
+<br>
+<div class="buttons">
+<button class="waves-effect waves-light btn #039be5 light-blue darken-1" id="play" >Reproducir</button>
+<button class="waves-effect waves-light btn #039be5 light-blue darken-1" id="pause">Pausar</button>
+<button class="waves-effect waves-light btn #039be5 light-blue darken-1" id="detener">Detener</button>
+<button class="waves-effect waves-light btn #039be5 light-blue darken-1" id="atrasar">&lt&lt</button>
+<button class="waves-effect waves-light btn #039be5 light-blue darken-1" id="adelantar">&gt&gt</button>
+<button class="waves-effect waves-light btn #039be5 light-blue darken-1" id="subir">+</button>
+<button class="waves-effect waves-light btn #039be5 light-blue darken-1" id="bajar">-</button>
+</div>
+<br>
+</body>
+<script type="text/javascript">
+	let video = document.getElementById('video');
+	let play = document.getElementById('play');
+	let pause = document.getElementById('pause');
+	let detener = document.getElementById('detener');
+	let adelantar = document.getElementById('adelantar');
+	let atrasar = document.getElementById('atrasar');
+	let subir = document.getElementById('subir');
+	let bajar = document.getElementById('bajar');
+	play.addEventListener('click',function(){
+		video.play();
+	});
+	pause.addEventListener('click',function(){
+		video.pause();
+	});
+	detener.addEventListener('click',function(){
+		video.pause();
+		video.currentTime=0;
+	});
+	adelantar.addEventListener('click',function(){
+		video.currentTime+=1;
+	});
+	atrasar.addEventListener('click',function(){
+		video.currentTime-=1;
+	});
+	subir.addEventListener('click', function(){
+		if(video.volume<=0.9){
+			video.volume+=0.1;
+		}
+	});
+	bajar.addEventListener('click', function(){
+		if(video.volume>=0.1){
+			video.volume-=0.1;
+		}
+	});
+
+
+</script>
+</html>

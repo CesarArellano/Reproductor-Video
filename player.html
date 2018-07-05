@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Reproductor de Vídeo Chido</title>
+	<link rel="stylesheet" href="css/player.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+
+	<h1>Reproductor de Vídeo / Ejercicio</h1>
+	<div class="video-player">
+	<video src="video/esperame.mp4"></video>
+	<div class="controls">
+	<div class="top">
+	<div class="volume toogleSlide">
+	<i class="material-icons md-24 show-volume md-light">volume_up</i>
+	<div>
+	<input type="range" id="volume-range" value="1" min="0" max="1" step="0.05">
+	</div>
+	</div>
+	<div class="speed toogleSlide">
+	<i class="material-icons md-24 show-speed md-light">settings</i>
+	<div>
+		<span class="playBackRate pointer" data-value="2.0">2x</span>
+		<span class="playBackRate pointer" data-value="1.5">1.5x</span>
+		<span class="playBackRate pointer" data-value="1.0">1x</span>
+		<span class="playBackRate pointer" data-value="0.5">0.5x</span>
+		<span class="playBackRate pointer" data-value="0.25">0.25x</span>
+	</div>
+	</div>
+	</div>
+	<div class="center">
+		<i class="material-icons md-96 md-light pointer play-pause">play_arrow</i>
+	</div>
+	<div class="bottom">
+		<div class="bar-controls">
+			<span class="current-duration">0:00</span>
+			<span class="pull-right">
+			<i class="material-icons md-24 md-light pointer set-full-screen">fullscreen</i>
+		</span>
+		<span class="pull-right full-duration">0:00</span>
+		</div>
+		<div class="progress">
+			<div class="bar">
+				
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+</body>
+ <script type="text/javascript" src="js/player.js"></script>
+<script type="text/javascript">
+	let video = new Video('.video-player');
+</script>
+</html>
