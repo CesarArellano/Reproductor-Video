@@ -8,6 +8,10 @@ class Video{
 		}
 	bindEvents(){
 		this.playPauseBtn = document.querySelector(this.selector + " .play-pause");
+		this.replayBtn = document.querySelector(this.selector + " .replay");
+		this.backwardBtn = document.querySelector(this.selector + " .backward");
+		this.forwardBtn = document.querySelector(this.selector + " .forward");
+		this.forward10Btn = document.querySelector(this.selector + " .forward_10");
 		this.showVolumeBtn = document.querySelector(this.selector + " .show-volume");
 		this.showSpeedBtn = document.querySelector(this.selector + " .show-speed");
 		this.volumeRange = document.querySelector(this.selector + " #volume-range");
@@ -18,6 +22,10 @@ class Video{
 		this.playBackRateBtns = document.querySelectorAll(this.selector + " .playBackRate");
 		
 		this.playPauseBtn.addEventListener('click', ()=>this.playPause());
+		this.replayBtn.addEventListener('click', ()=>this.replay());
+		this.backwardBtn.addEventListener('click', ()=>this.backward());
+		this.forwardBtn.addEventListener('click', ()=>this.forward());
+		this.forward10Btn.addEventListener('click', ()=>this.forward10());
 		this.showVolumeBtn.addEventListener('click', ()=>this.toggleVolume());
 		this.volumeRange.addEventListener('input', ()=>this.updateVolume());
 		this.videoElement.addEventListener('timeupdate', ()=>this.updateProgress());
@@ -56,6 +64,18 @@ class Video{
 				this.playPauseBtn.innerHTML="play_arrow";
 			
 			}
+		}
+		backward(){
+			this.videoElement.currentTime -= 1;
+		}
+		forward(){
+			this.videoElement.currentTime += 1;
+		}
+		forward10(){
+			this.videoElement.currentTime += 10;
+		}
+		replay(){
+			this.videoElement.currentTime -= 10;
 		}
 		toggleVolume(){
 			document.querySelector(this.selector + " .volume").classList.toggle('active');

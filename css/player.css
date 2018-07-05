@@ -32,8 +32,8 @@ video{
 	flex-direction: row;
 	flex-wrap: wrap;
 	opacity: 0;
-	transition: all 0.2s;
-	}
+	transition: all 0.1s;
+}
 .controls .top{
 	position: absolute;
 	top:1em;
@@ -109,8 +109,29 @@ vertical-align: top;
 	margin-top: -6px;
 	margin-left: 0.5em;
 } 
+@media screen and (max-width: 600px){
+.material-icons.md-96{
+	font-size: 60px;
+}
+.material-icons.md-48{
+	font-size: 60px;
+}
+.video-player:hover .center i{
+	transition: 0.3s;
+	font-size: 55px;
+}
+}
+@media screen and (min-width: 601px){
 .material-icons.md-96{
 	font-size: 96px;
+}
+.material-icons.md-48{
+	font-size: 75px;
+}
+.video-player:hover .center i{
+	transition: 0.3s;
+	font-size: 90px;
+}
 }
 .material-icons.md-24{
 	font-size: 24px;
@@ -122,7 +143,6 @@ vertical-align: top;
 	cursor: pointer;
 }
 .buttons{
-	margin-top: -1%;
 	text-align: center;
 }
 .pull-right{
